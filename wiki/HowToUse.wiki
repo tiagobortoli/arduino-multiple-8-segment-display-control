@@ -12,13 +12,13 @@ How to use it:
 
 2) Rename it removing the version number, for example from LED8SegDisplay595.0.8.cpp to LED8SegDisplay595.0.8.cpp.
 
-3) Create a directory LED8SegDisplay595.cpp below your <Arduino dir>\libraries
+3) Create a directory LED8SegDisplay595 below your <Arduino dir>\libraries
 
 4) Put the .h and .cpp files inside it.
 
 5) Implement the circuit, connect to the Arduino.
 
-6) Open LED8Seg595Demo.ino file, adjust it (the port numbers and the number of displays). It´s not necessary to implement all the circuit, you can for example no implement the termometer stuff and the demo stills working.
+6) Open EightSegDisplayDemo.ino file, adjust it (basically the port numbers and the number of displays). It´s not necessary to implement all the circuit, you can for example no implement the termometer stuff and the demo stills working.
 
 7) Enjoy!
 
