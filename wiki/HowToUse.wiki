@@ -2,15 +2,27 @@
 
 = Introduction =
 
-Add your content here.
-
+This is a library that allow you to manage an amount of 8 segments LED based displays using only three digital pins of an Arduino.
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+How to use it:
+
+1) Download the code last version files (.h and .cpp) and the example file.
+
+2) Rename it removing the version number, for example from LEDMatrix595.0.81.h to LEDMatrix595.h.
+
+3) Create a directory LEDMatrix595 below your <Arduino dir>\libraries
+
+4) Put the .h and .cpp files inside it.
+
+5) Mount the circuit, connect to the Arduino.
+
+6) Open example.ino file, adjust it (the port numbers and the number of RGB LEDs
+
+7) Enjoy!
+
+Below, the class itens are described.
 
 {{{
 class LED8SegDisplay595
