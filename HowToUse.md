@@ -1,0 +1,57 @@
+# Introduction #
+
+This is a library that allow you to manage an amount of 8 segments LED based displays using only three digital pins of an Arduino.
+
+# Details #
+
+How to use it:
+
+1) Download the code last version files (.h and .cpp) and the example file.
+
+2) Rename it removing the version number, for example from LED8SegDisplay595.0.8.cpp to LED8SegDisplay595.0.8.cpp.
+
+3) Create a directory LED8SegDisplay595 below your <Arduino dir>\libraries
+
+4) Put the .h and .cpp files inside it.
+
+5) Implement the circuit, connect to the Arduino.
+
+6) Open EightSegDisplayDemo.ino file, adjust it (basically the port numbers and the number of displays). It´s not necessary to implement all the circuit, you can for example no implement the termometer stuff and the demo stills working.
+
+7) Enjoy!
+
+Below, the class itens are described.
+
+```
+class LED8SegDisplay595
+{
+   public:
+// Constructor
+//   int _displayCount: number of 8 segment displays to be managed
+//   int _clockPin: number of Arduino port that´s connected the clock pin of the first 595 CI (CI pin 12)
+//   int _latchPin: number of Arduino port that´s connected the latch pin of the first 595 CI (CI pin 11)
+//   int _dataPin: number of Arduino port that´s connected the data pin of the first 595 CI (CI pin 14)
+     LED8SegDisplay595(int _displayCount, int _clockPin, int _latchPin, int _dataPin);
+//   set the corresponding display mask (from now on, it will be considered common cathod)
+     void setDisplayMask(byte display);
+//   clear display mask
+     void clearDisplayMask(byte display);     
+//   show error message Er.      
+     void errorMessage(int millissecs);
+//   write a value in the displays
+     void write(byte value);
+     void write(float value, int decimalPlaces);
+//   switch off the RGB LED corresponding colors      
+     int debug;    //Indicates debug mode  
+     byte displayMask[8]; //=  {B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000};        
+     char buf[33];
+     long errMilissecs;
+   private:
+     int displayCount;  //Number of LEDs to manage  
+     int clockPin;  //Pin connected to Pin 11 of 74HC595 (Clock)
+     int latchPin;  //Pin connected to Pin 12 of 74HC595 (Latch)
+     int dataPin;   //Pin connected to Pin 14 of 74HC595 (Data) 
+     void shiftOut(byte dataOut); 
+};
+#endif
+```

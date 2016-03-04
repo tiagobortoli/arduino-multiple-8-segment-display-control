@@ -1,0 +1,1 @@
+It provides features to write integer and floating point number to a group of 8 segments displays, including error (overflow) treatment as well.
